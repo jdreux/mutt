@@ -10,9 +10,11 @@ Initially inspired by [airbnb's rendr](https://github.com/airbnb/rendr), mutt sh
 Philosphy
 ---------
 
-In the [holy grail](http://nerds.airbnb.com/slides-and-video-from-spike-brehms-tech-talk) of web applications, both client and server talk to an external API and share:
+In the [holy grail](http://nerds.airbnb.com/slides-and-video-from-spike-brehms-tech-talk) of web applications, both client and server:
 
-the capacity to render templates for model, 
+* talk to an external API
+* share the capacity to render view templates
+* share the user session
 
 
 How it works
@@ -40,3 +42,9 @@ How it works
                   |
            (shared session)
 </pre>
+
+The application stack sits behinds a reverse proxy (the mutt.proxy element). The 'mutt' app is a connect/express web application that uses the mutt.middleware. 
+
+The mutt middleware enables sharing of the session by the express app & the client by copying the original request's authentication cookies onto the internal api request.
+
+The mutt middleware creates a req.api method which is an HTTP REST client to the API. 
