@@ -1,0 +1,16 @@
+{
+  "name": "mutt",
+  "version": "0.0.1",
+  "description": "A node.js proxy & connect middleware to support view templates shared between server & browser",
+  "contributors": [{ "name": "Julien Dreux", "email": "julien.dreux@gmail.com" }],
+  "homepage": "https://github.com/jdreux/mutt",
+  "directories" : { "lib" : "./lib" },
+  "dependencies": {
+	"restler": "2.0.1",
+	"http-proxy": "0.10.1"
+  },
+  "devDependencies": {
+	"express": "3.2.0",
+	"express3-handlebars": "0.4.1"
+  }
+}
